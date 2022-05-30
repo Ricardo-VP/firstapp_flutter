@@ -1,3 +1,4 @@
+import 'package:firstapp_flutter/pages/save_page.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,14 @@ class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.pushNamed(context, SavePage.ROUTE);
+        },
+      ),
       appBar: AppBar(
-        title: Text("List"),
+        title: const Text("List"),
       ),
       body: ListView(
         children: const <Widget>[
